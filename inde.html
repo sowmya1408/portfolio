@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sowmya Mannem - ML Engineer (Computer Vision)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #111827;
+      /* Darker Gray */
+      color: #d1d5db;
+      /* Lighter Gray Text */
+    }
+
+    .glass-effect {
+      background: rgba(17, 24, 39, 0.8);
+      /* Darker glass */
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .highlight {
+      color: #8b5cf6;
+      /* Vibrant Purple */
+    }
+
+    .section-heading {
+      color: #d1d5db;
+    }
+
+    .project-card {
+      background-color: #1f2937;
+      /* Gray-800 */
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 0 1px #8b5cf6;
+    }
+
+    /* Animation classes */
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .revealable {
+      opacity: 0;
+      /* Start hidden, wait for JS */
+    }
+
+    .revealed {
+      animation: reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+  </style>
+</head>
+
+<body class="antialiased leading-relaxed">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#hero" class="text-2xl font-bold highlight">AD</a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="hover:text-highlight transition-colors duration-300">About</a>
+        <a href="#projects" class="hover:text-highlight transition-colors duration-300">Projects</a>
+        <a href="#skills" class="hover:text-highlight transition-colors duration-300">Skills</a>
+        <a href="#contact" class="hover:text-highlight transition-colors duration-300">Contact</a>
+        <a href="#"
+          class="border border-highlight text-highlight rounded-md px-4 py-2 hover:bg-highlight/10 transition-colors duration-300">Resume</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#about"
+          class="block px-3 py-2 rounded-md text-base font-medium hover:text-highlight hover:bg-gray-700">About</a>
+        <a href="#projects"
+          class="block px-3 py-2 rounded-md text-base font-medium hover:text-highlight hover:bg-gray-700">Projects</a>
+        <a href="#skills"
+          class="block px-3 py-2 rounded-md text-base font-medium hover:text-highlight hover:bg-gray-700">Skills</a>
+        <a href="#contact"
+          class="block px-3 py-2 rounded-md text-base font-medium hover:text-highlight hover:bg-gray-700">Contact</a>
+        <a href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium border border-highlight text-highlight hover:bg-highlight/10 mt-2 text-center">Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6">
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-start pt-24">
+      <p class="text-highlight text-lg mb-4 revealable" style="animation-delay: 100ms;">Hi, my name is</p>
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-200 revealable" style="animation-delay: 200ms;">
+        Sowmya Mannem.</h1>
+      <h2 class="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-400 mt-2 revealable"
+        style="animation-delay: 300ms;">I build intelligent vision systems.</h2>
+      <p class="mt-6 max-w-xl text-lg text-gray-400 revealable" style="animation-delay: 400ms;">
+        I'm a Machine Learning Engineer specializing in Computer Vision. I design and build cutting-edge solutions that
+        enable machines to see and understand the world, from real-time object detection to complex image segmentation.
+      </p>
+      <div class="mt-8 flex items-center space-x-4 revealable" style="animation-delay: 500ms;">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+          class="text-gray-400 hover:text-highlight"><i data-lucide="github" class="w-7 h-7"></i></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+          class="text-gray-400 hover:text-highlight"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+        <a href="mailto:alex.doe@email.com" class="text-gray-400 hover:text-highlight"><i data-lucide="mail"
+            class="w-7 h-7"></i></a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24">
+      <h2 class="text-3xl font-bold mb-8 flex items-center section-heading revealable">
+        <span class="text-highlight mr-3">01.</span> About Me
+        <span class="h-px bg-gray-700 flex-grow ml-4"></span>
+      </h2>
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+        <div class="md:w-3/5 text-gray-400 space-y-4 text-lg revealable" style="animation-delay: 200ms;">
+          <p>
+            Hello! I'm Alex, a passionate engineer with a deep interest in the intersection of artificial intelligence
+            and computer vision. My journey began with a fascination for how we could teach computers to interpret
+            visual data, leading me to pursue a career dedicated to this field.
+          </p>
+          <p>
+            I thrive on building robust, scalable, and efficient ML models. I have hands-on experience in the entire
+            machine learning lifecycle, from data collection and preprocessing to model training, deployment, and
+            monitoring. I'm particularly interested in semantic segmentation, generative models, and efficient model
+            deployment for edge devices.
+          </p>
+          <p>
+            I'm always eager to learn about new technologies and methodologies in the rapidly evolving field of AI.
+          </p>
+        </div>
+        <div class="md:w-2/5 flex justify-center items-start revealable" style="animation-delay: 300ms;">
+          <div class="w-64 h-64 rounded-md overflow-hidden relative group">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+              alt="Alex Doe" class="absolute w-full h-full object-cover z-10">
+            <div
+              class="absolute w-full h-full border-2 border-highlight top-4 left-4 rounded-md group-hover:top-3 group-hover:left-3 transition-all duration-300">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+      <h2 class="text-3xl font-bold mb-8 flex items-center section-heading revealable">
+        <span class="text-highlight mr-3">02.</span> Some Things I’ve Built
+        <span class="h-px bg-gray-700 flex-grow ml-4"></span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="project-card rounded-md p-6 flex flex-col justify-between shadow-lg revealable"
+          style="animation-delay: 100ms;">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <i data-lucide="folder-git-2" class="w-10 h-10 text-highlight"></i>
+              <div class="flex space-x-2">
+                <a href="#" class="text-gray-400 hover:text-highlight"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-highlight"><i data-lucide="external-link"
+                    class="w-6 h-6"></i></a>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-200 mb-2">Real-time Vehicle Detection & Tracking</h3>
+            <p class="text-gray-400 mb-4">
+              A YOLOv8-based system for detecting and tracking vehicles in traffic footage, optimized for performance on
+              edge devices using TensorRT.
+            </p>
+          </div>
+          <div class="flex flex-wrap text-sm text-gray-400 mt-4 gap-2">
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">PyTorch</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">OpenCV</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">YOLOv8</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">TensorRT</span>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card rounded-md p-6 flex flex-col justify-between shadow-lg revealable"
+          style="animation-delay: 200ms;">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <i data-lucide="folder-git-2" class="w-10 h-10 text-highlight"></i>
+              <div class="flex space-x-2">
+                <a href="#" class="text-gray-400 hover:text-highlight"><i data-lucide="github" class="w-6 h-6"></i></a>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-200 mb-2">Medical Image Segmentation</h3>
+            <p class="text-gray-400 mb-4">
+              Developed a U-Net based model for segmenting tumors from MRI scans. Achieved high Dice scores through data
+              augmentation and transfer learning.
+            </p>
+          </div>
+          <div class="flex flex-wrap text-sm text-gray-400 mt-4 gap-2">
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">TensorFlow</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">Keras</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">U-Net</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">Scikit-image</span>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card rounded-md p-6 flex flex-col justify-between shadow-lg revealable"
+          style="animation-delay: 300ms;">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <i data-lucide="folder-git-2" class="w-10 h-10 text-highlight"></i>
+              <div class="flex space-x-2">
+                <a href="#" class="text-gray-400 hover:text-highlight"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-highlight"><i data-lucide="external-link"
+                    class="w-6 h-6"></i></a>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-200 mb-2">Generative Art with StyleGAN</h3>
+            <p class="text-gray-400 mb-4">
+              Trained a StyleGAN2 model on a custom dataset of abstract art to generate novel, high-resolution images.
+              Built a simple web interface with Flask.
+            </p>
+          </div>
+          <div class="flex flex-wrap text-sm text-gray-400 mt-4 gap-2">
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">PyTorch</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">StyleGAN2</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">Flask</span>
+            <span class="bg-gray-900/50 px-2 py-1 rounded-full">Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+      <h2 class="text-3xl font-bold mb-8 flex items-center section-heading revealable">
+        <span class="text-highlight mr-3">03.</span> My Toolbox
+        <span class="h-px bg-gray-700 flex-grow ml-4"></span>
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-gray-400">
+        <div class="revealable" style="animation-delay: 100ms;">
+          <h3 class="font-bold text-lg text-gray-200 mb-3">Languages</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>Python
+            </li>
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>C++
+            </li>
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>SQL
+            </li>
+          </ul>
+        </div>
+        <div class="revealable" style="animation-delay: 200ms;">
+          <h3 class="font-bold text-lg text-gray-200 mb-3">ML Frameworks</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>PyTorch
+            </li>
+            <li class="flex items-center"><i data-lucide="chevron-right"
+                class="w-4 h-4 text-highlight mr-2"></i>TensorFlow / Keras</li>
+            <li class="flex items-center"><i data-lucide="chevron-right"
+                class="w-4 h-4 text-highlight mr-2"></i>Scikit-learn</li>
+          </ul>
+        </div>
+        <div class="revealable" style="animation-delay: 300ms;">
+          <h3 class="font-bold text-lg text-gray-200 mb-3">CV Libraries</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>OpenCV
+            </li>
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>Pillow
+            </li>
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>Dlib
+            </li>
+          </ul>
+        </div>
+        <div class="revealable" style="animation-delay: 400ms;">
+          <h3 class="font-bold text-lg text-gray-200 mb-3">Tools & Platforms</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>Docker
+            </li>
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>Git &
+              GitHub</li>
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>AWS
+              (S3, SageMaker)</li>
+            <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 text-highlight mr-2"></i>GCP (AI
+              Platform)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 text-center max-w-xl mx-auto">
+      <h2 class="text-2xl font-bold mb-2 text-highlight revealable">04. What's Next?</h2>
+      <h3 class="text-4xl font-bold text-gray-200 mb-4 revealable" style="animation-delay: 100ms;">Get In Touch</h3>
+      <p class="text-gray-400 mb-8 revealable" style="animation-delay: 200ms;">
+        I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi,
+        my inbox is always open. I'll do my best to get back to you!
+      </p>
+      <a href="mailto:alex.doe@email.com"
+        class="inline-block border border-highlight text-highlight rounded-md px-8 py-4 text-lg hover:bg-highlight/10 transition-colors duration-300 revealable"
+        style="animation-delay: 300ms;">
+        Say Hello
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-400 text-sm">
+    <p>Designed & Built by Alex Doe</p>
+    <p class="mt-1">Inspired by Brittany Chiang's Portfolio</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Hide mobile menu on link click
+    document.querySelectorAll('#mobile-menu a, nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // Header shadow on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('shadow-lg');
+      } else {
+        header.classList.remove('shadow-lg');
+      }
+    });
+
+    // Scroll animations
+    const revealables = document.querySelectorAll('.revealable');
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    revealables.forEach(el => {
+      // Reveal hero section elements immediately on load
+      if (el.closest('#hero')) {
+        el.classList.add('revealed');
+      } else {
+        observer.observe(el);
+      }
+    });
+
+  </script>
+</body>
+
+</html>
